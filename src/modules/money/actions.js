@@ -11,10 +11,3 @@ export const addMoney = ({ amount, currency }) => ({
 export const removeMoney = () => ({
   type: AT.REMOVE_MONEY,
 });
-
-export const changeCurrency = ({ currency }) => ({
-  type: AT.CHANGE_CURRENCY,
-  payload: {
-    currency,
-  },
-});

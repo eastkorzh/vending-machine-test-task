@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import * as action from './actions';
+import * as actions from './actions';
 import Money from './component';
 
 const mapStateToProps = store => ({
@@ -9,9 +9,8 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = {
-  addMoney: action.addMoney,
-  removeMoney: action.removeMoney,
-  changeCurrency: action.changeCurrency,
+  addMoney: actions.addMoney,
+  removeMoney: actions.removeMoney,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Money)

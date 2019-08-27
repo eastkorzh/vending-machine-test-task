@@ -1,4 +1,5 @@
 import * as AT from './action-types';
+import { CHANGE_CURRENCY } from './currencyChanger/action-types';
 import { USD_course, EUR_course } from '../API/localStorage';
 
 const initialState = {
@@ -55,7 +56,7 @@ export default (state = { ...initialState }, action) => {
         },
       };
 
-    case AT.CHANGE_CURRENCY:
+    case CHANGE_CURRENCY:
       return {
         ...state,
         currency: action.payload.currency,
