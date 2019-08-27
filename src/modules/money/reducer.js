@@ -12,19 +12,19 @@ const initialState = {
 
 function MoneyAmount ({ amount, currency }) {
   if (currency === 'RUB') {
-    this.RUB = Math.ceil(10*amount)/10;
-    this.USD = Math.ceil(10*amount/USD_course)/10;
-    this.EUR = Math.ceil(10*(amount/USD_course)/EUR_course)/10;
+    this.RUB = Math.ceil(100*amount)/100;
+    this.USD = Math.ceil(100*amount/USD_course)/100;
+    this.EUR = Math.ceil(100*(amount/USD_course)/EUR_course)/100;
   }
   if (currency === 'USD') {
-    this.RUB = Math.ceil(10*amount*USD_course)/10;
-    this.USD = Math.ceil(10*amount)/10;
-    this.EUR = Math.ceil(10*amount/EUR_course)/10;
+    this.RUB = Math.ceil(100*amount*USD_course)/100;
+    this.USD = Math.ceil(100*amount)/100;
+    this.EUR = Math.ceil(100*amount/EUR_course)/100;
   }
   if (currency === 'EUR') {
-    this.RUB = Math.ceil(10*amount*EUR_course*USD_course)/10;
-    this.USD = Math.ceil(10*amount*EUR_course)/10;
-    this.EUR = Math.ceil(10*amount)/10;
+    this.RUB = Math.ceil(100*amount*EUR_course*USD_course)/100;
+    this.USD = Math.ceil(100*amount*EUR_course)/100;
+    this.EUR = Math.ceil(100*amount)/100;
   }
 }
 
@@ -37,9 +37,9 @@ export default (state = { ...initialState }, action) => {
       });
 
       const sum = {
-        USD: state.moneyAmount.USD + additionalAmmount.USD,
-        RUB: state.moneyAmount.RUB + additionalAmmount.RUB,
-        EUR: state.moneyAmount.EUR + additionalAmmount.EUR,
+        USD: Math.ceil(100*(state.moneyAmount.USD + additionalAmmount.USD))/100,
+        RUB: Math.ceil(100*(state.moneyAmount.RUB + additionalAmmount.RUB))/100,
+        EUR: Math.ceil(100*(state.moneyAmount.EUR + additionalAmmount.EUR))/100,
       }
       return {
         ...state,

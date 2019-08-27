@@ -5,8 +5,8 @@ function CreateItem(name, count, USD, img) {
   this.name = name || 'no name';
   this.count = count || 0;
   this.USD = USD || 0;
-  this.RUB = Math.ceil(USD*USD_course*10)/10 || 0;
-  this.EUR = Math.ceil(USD*EUR_course*10)/10 || 0;
+  this.RUB = Math.ceil(USD*USD_course*100)/100 || 0;
+  this.EUR = Math.ceil(USD*EUR_course*100)/100 || 0;
   this.img = img || '404.png'
 }
 
