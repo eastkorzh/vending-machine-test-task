@@ -1,7 +1,7 @@
-function CreateItem(name, count, USD, img) {
-  const USD_course = 67;
-  const EUR_course = 1.11;
+export const USD_course = 67;
+export const EUR_course = 1.11;
 
+function CreateItem(name, count, USD, img) {
   this.name = name || 'no name';
   this.count = count || 0;
   this.USD = USD || 0;
@@ -22,6 +22,7 @@ const defaultItems = [
   new CreateItem('Lays - Сметана и лук', 40, 1, 'onion.png'),
 ];
 
-if (!localStorage.items) localStorage.items = JSON.stringify(defaultItems)
-
+export const setItems = (items) => localStorage.items = JSON.stringify(items);
 export const getItems = () => JSON.parse(localStorage.items);
+
+if (!localStorage.items) setItems(defaultItems);

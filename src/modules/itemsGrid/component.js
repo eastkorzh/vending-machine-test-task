@@ -2,7 +2,10 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-export default ({ items, currency, buyItem }) => {
+export default ({ items, currency, pickItem, requestItems }) => {
+  React.useEffect(() => {
+    if (!items.length) requestItems() 
+  })
   return(
     <div className={styles.grid}>
       {items.map((item) => {
@@ -14,7 +17,7 @@ export default ({ items, currency, buyItem }) => {
           <div 
             key={item.name} 
             className={styles.card}
-            onClick={() => buyItem({ name: item.name })}
+            onClick={() => pickItem({ item })}
           >
             <div className={styles.img}>
               <img src={require(`../../img/${item.img}`)} alt={item.img} />

@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import app from './modules/app/reducer';
+import itemsGrid from './modules/itemsGrid/reducer';
+import money from './modules/money/reducer';
 
 export default combineReducers({
-  app,
+  itemsGrid,
+  money,
 });

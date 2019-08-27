@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 
-import { getItems } from '../API/localStorage'
 import ItemsGrid from './component';
 import * as actions from './actions'
 
 const mapStateToProps = store => ({
-  items: getItems(),
-  currency: 'RUB',
+  items: store.itemsGrid.items || [],
+  currency: store.money.currency,
 });
 
 const mapDispatchToProps = {
-  buyItem: actions.buyItem,
+  requestItems: actions.requestItems,
+  pickItem: actions.pickItem,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemsGrid);
