@@ -11,8 +11,10 @@ export default ({
       <div className={styles.back}>
         <div className={styles.window}>
           <div className={styles.modal}>
-            <div>Заберите</div>
-            <div>{boughtItem.name}</div>
+            <div className={styles.itemText}>Примите товар</div>
+            <div className={styles.imgWrapper}>
+              <img src={require(`../../../img/${boughtItem.img}`)} alt={boughtItem.name}/>
+            </div>
             <button onClick={() => clearBought()}>OK</button>
           </div>
         </div>

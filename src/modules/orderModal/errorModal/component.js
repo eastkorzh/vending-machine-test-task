@@ -11,7 +11,7 @@ export default ({
       <div className={styles.back}>
         <div className={styles.window}>
           <div className={styles.modal}>
-            <div>{message}</div>
+            <div className={styles.message}>{message}</div>
             <button onClick={() => clearErrors()}>OK</button>
           </div>
         </div>
