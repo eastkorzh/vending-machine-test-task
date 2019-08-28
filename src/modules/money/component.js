@@ -1,15 +1,15 @@
 import React from 'react';
 
 import styles from './styles.module.scss';
-import CurrencyChanger from './currencyChanger/component';
+import CurrencyChanger from './currencyChanger';
 
-export default ({ moneyAmount, addMoney, removeMoney, currency, changeCurrency }) => {
+export default ({ moneyAmount, addMoney, removeMoney, currency }) => {
   const [amount, setAmount] = React.useState('');
 
   return (
     <div className={styles.grid}>
-      <div>{moneyAmount[currency] + ' ' + currency}</div>
-      <CurrencyChanger currency={currency}/>
+      <div>{moneyAmount[currency]}</div>
+      <CurrencyChanger />
       <input
         onChange={(e) => setAmount(e.target.value)}
         value={amount}

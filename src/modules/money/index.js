@@ -13,4 +13,4 @@ const mapDispatchToProps = {
   removeMoney: actions.removeMoney,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Money)
+export default connect(mapStateToProps, mapDispatchToProps)(Money);

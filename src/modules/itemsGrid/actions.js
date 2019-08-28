@@ -15,9 +15,6 @@ export const pickItem = ({ item }) => ({
   }
 });
 
-export const buyItem = ({ name }) => ({
-  type: AT.BUY_ITEM,
-  payload: {
-    name,
-  }
+export const unpickItem = () => ({
+  type: AT.UNPICK_ITEM,
 });

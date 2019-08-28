@@ -1,5 +1,7 @@
 import * as AT from './action-types';
 import { CHANGE_CURRENCY } from './currencyChanger/action-types';
+import { BUY_ITEM } from '../orderModal/action-types'
+
 import { USD_course, EUR_course } from '../API/localStorage';
 
 const initialState = {
@@ -55,6 +57,17 @@ export default (state = { ...initialState }, action) => {
           EUR: 0,
         },
       };
+
+    case BUY_ITEM:
+      const residual = {
+        USD: Math.ceil(100*(state.moneyAmount.USD - action.payload.item['USD']))/100,
+        RUB: Math.ceil(100*(state.moneyAmount.RUB - action.payload.item['RUB']))/100,
+        EUR: Math.ceil(100*(state.moneyAmount.EUR - action.payload.item['EUR']))/100,
+      }
+      return {
+        ...state,
+        moneyAmount: residual,
+      }
 
     case CHANGE_CURRENCY:
       return {

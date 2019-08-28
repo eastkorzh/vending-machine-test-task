@@ -41,7 +41,7 @@ export default ({ currency, changeCurrency }) => {
         />
       </Dropdown.Menu>
     </Dropdown>
-  );
+  )
 };
 
 const styleLink = document.createElement("link");
