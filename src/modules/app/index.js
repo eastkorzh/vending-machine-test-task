@@ -9,7 +9,7 @@ export default () => {
   return(
     <>
       <header className={styles.grid}>
-        <div>Вендинговый аппарат</div>
+        <h1 className={styles.headText}>Вендинговый аппарат</h1>
         <Money />
       </header>
       <section>

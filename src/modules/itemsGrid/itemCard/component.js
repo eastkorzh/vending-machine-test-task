@@ -10,9 +10,9 @@ export default ({ item, currency }) => {
       <div className={styles.img}>
         <img src={require(`../../../img/${item.img}`)} alt={item.img} />
       </div>
-      <div>{item.name}</div> 
-      <div>{item[currency] + ' ' + currency}</div> 
-      <div>{item.count}</div>
+      <div className={styles.name}>{item.name}</div> 
+      <div className={styles.price}>{item[currency] + ' ' + currency}</div> 
+      <div className={styles.count}>{`Осталось ${item.count} шт.`}</div>
     </div>
   )
 }

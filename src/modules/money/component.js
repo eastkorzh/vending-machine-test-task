@@ -8,7 +8,7 @@ export default ({ moneyAmount, addMoney, removeMoney, currency }) => {
 
   return (
     <div className={styles.grid}>
-      <div>{moneyAmount[currency]}</div>
+      <div className={styles.moneyAmount}>{moneyAmount[currency]}</div>
       <CurrencyChanger />
       <input
         onChange={(e) => setAmount(e.target.value)}

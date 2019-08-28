@@ -14,7 +14,7 @@ const defaultItems = [
   new CreateItem('Coca-Cola', 200, 1.5, 'cola.png'),
   new CreateItem('Fanta', 20, 1.55, 'fanta.png'),
   new CreateItem('Sprite', 20, 1.4, 'sprite.png'),
-  new CreateItem('Байкал', 20, 1.3, 'байкал.jpg'),
+  new CreateItem('Байкал', 20, 1.3, 'байкал.png'),
   new CreateItem('Snickers', 50, 0.8, 'snickers.png'),
   new CreateItem('Mars', 50, 0.7, 'mars.png'),
   new CreateItem('Bounty', 50, 0.9, 'bounty.png'),
